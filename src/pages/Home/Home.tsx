@@ -1,5 +1,9 @@
 import location from "/img/location.png";
 import { ButtonService } from "../../components/buttonService/ButtonService";
+import { PhotoSlide } from "../../components/photoSlide/PhotoSlide";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaYoutubeSquare } from "react-icons/fa";
 
 export function Home() {
   return (
@@ -12,13 +16,13 @@ export function Home() {
         </div>
       </header>
       <div className="flex justify-center w-full">
-        <main className="flex flex-col items-center w-full max-w-5xl border-2 border-green-400 mt-7">
-          <div className="w-full max-w-2xl h-48 md:w-full md:max-w-4xl md:h-60 bg-[url(/img/banner.png)]  bg-cover bg-center flex flex-col justify-end   border-2 border-amber-300 ml-4 mr-4">
+        <main className="flex flex-col items-center gap-6 w-full max-w-5xl  mt-7">
+          <div className="w-full max-w-2xl h-48 md:w-full md:max-w-4xl md:h-60 bg-[url(/img/banner.png)]  bg-cover bg-center flex flex-col justify-end   ml-4 mr-4">
             <p className="ml-2.5 md:ml-7 mb-2 md:mb-7 w-44 text-white text-sm md:text-base">
               [Nome da Barbearia] Santa Luzia - MA
             </p>
           </div>
-          <section className=" w-full flex-wrap md:flex-nowrap max-w-5xl flex gap-7 mt-7 border-4 border-violet-900">
+          <section className=" w-full flex-wrap md:flex-nowrap max-w-5xl flex gap-7  ">
             {/* service and carrosel */}
             <div className="flex flex-col gap-7 w-full md:max-w-25.1">
               <div className="flex md:hidden justify-center items-center text-justify px-2 py-2 w-full  bg-azul rounded-lg">
@@ -50,7 +54,14 @@ export function Home() {
                 </div>
               </div>
               {/* carrosel */}
-              <div className="w-full md:max-w-25.1 h-35.75  border-2 border-blue-400"></div>
+              <div className="flex flex-col w-full md:max-w-25.1 bg-azul px-5 py-5 rounded-2xl">
+                <h1 className="text-base md:text-2xl text-white mb-3">
+                  Cortes
+                </h1>
+                <div className="flex justify-center w-full h-full">
+                  <PhotoSlide />
+                </div>
+              </div>
             </div>
             {/* Description, contact and temps */}
             <div className="flex flex-col gap-7 w-full">
@@ -111,6 +122,31 @@ export function Home() {
               </div>
             </div>
           </section>
+          <div className="flex flex-col items-center mb-10">
+            <h2 className="text-base font-medium md:text-2xl mb-3">
+              Redes social
+            </h2>
+            <div className="flex justify-center gap-4">
+              <a href="https://web.facebook.com/" target="_blank">
+                <FaFacebookSquare
+                  className="w-8 h-8 md:w-10 md:h-10"
+                  color="#3684d4"
+                />
+              </a>
+              <a href="https://www.instagram.com/" target="_blank">
+                <FaInstagramSquare
+                  className="w-8 h-8 md:w-10 md:h-10"
+                  color="#ff7a65"
+                />
+              </a>
+              <a href="https://www.youtube.com/" target="_blank">
+                <FaYoutubeSquare
+                  className="w-8 h-8 md:w-10 md:h-10"
+                  color="#ff0000"
+                />
+              </a>
+            </div>
+          </div>
         </main>
       </div>
     </div>
