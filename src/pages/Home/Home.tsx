@@ -7,7 +7,7 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 export function Home() {
   return (
-    <div className="flex flex-col items-center w-full min-h-screen bg-F3F3F3 pl-4 pr-4">
+    <div className="flex flex-col items-center w-full min-h-screen bg-F3F3F3 pl-4 pr-4 relative">
       <header className="flex justify-center w-full">
         <div className="md:h-20  h-14 flex justify-center items-center bg-azul w-full max-w-5xl mt-2.5 rounded-xl">
           <h1 className="text-2xl font-bold text-white md:text-4xl italic">
@@ -36,7 +36,7 @@ export function Home() {
                 </p>
               </div>
               {/* service */}
-              <div className="w-full md:max-w-25.1 bg-azul pl-5 pr-5 pb-5 border-2 rounded-xl">
+              <div className="w-full md:max-w-25.1 bg-azul pl-5 pr-5 pb-5 border-2 rounded-xl ">
                 <h2 className="text-white font-medium text-base md:text-2xl mt-4">
                   Serviços
                 </h2>
@@ -50,7 +50,7 @@ export function Home() {
                   <ButtonService court="Degrader" />
                   <ButtonService court="selagem" />
                   <ButtonService court="Social" />
-                  <ButtonService court="Social" />
+                  <ButtonService court="alisamento" />
                 </div>
               </div>
               {/* carrosel */}
@@ -58,7 +58,7 @@ export function Home() {
                 <h1 className="text-base md:text-2xl text-white mb-3">
                   Cortes
                 </h1>
-                <div className="flex justify-center w-full h-full">
+                <div className="flex justify-center w-full h-full z-1">
                   <PhotoSlide />
                 </div>
               </div>
@@ -66,7 +66,7 @@ export function Home() {
             {/* Description, contact and temps */}
             <div className="flex flex-col gap-7 w-full">
               {/* description */}
-              <div className="hidden md:flex text-xs justify-center items-center text-justify px-4 py-4 w-full   bg-azul rounded-lg">
+              <div className="hidden md:flex text-xs justify-center items-center text-justify px-4 py-4 w-full   bg-azul rounded-lg drop-shadow-lg">
                 <p className="lg:text-sm text-xs text-white">
                   Na [Nome da Barbearia], acreditamos que um bom corte de cabelo
                   e barba vão além da estética – é um momento de cuidado, estilo
