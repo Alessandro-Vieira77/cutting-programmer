@@ -3,6 +3,7 @@
 @theme {
   --color-azul: #0d2839;
   --color-F3F3F3: #f3f3f3;
+  --color-1D8F5A: #1D8F5A
   /* --spacing: 48rem; */
   --spacing-83.75: 83.75rem;
   --spacing-25.1: 25.1rem;
@@ -10,4 +11,6 @@
   --spacing-6.875: 6.875rem;
   --spacing-29.75: 29.75rem;
   --spacing-1070: 66.875rem;
+  --spacing-439: 27.25rem;
+  --spacing-87.5: 5.24rem;
 }
