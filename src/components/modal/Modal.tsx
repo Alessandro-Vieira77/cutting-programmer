@@ -12,11 +12,11 @@ export function Modal({ block, exit, court }: ModalProps) {
     <div
       className={
         block === "block"
-          ? "absolute flex justify-center left-0 top-0 w-full h-full max-h-full bg-black/70 bg-opacity-25 z-30"
+          ? "absolute flex justify-center left-0 top-0 w-full max-w-full h-full max-h-full bg-black/70 bg-opacity-25 z-30"
           : "hidden"
       }
     >
-      <div className="bg-azul top-96 rounded-2xl border-2 border-white absolute p-5 m-4">
+      <div className="bg-azul top-96 rounded-2xl border-2 border-white absolute p-5 mx-4">
         <h2 className="text-white font-medium text-2xl w-full text-center mb-5">
           {court}
         </h2>
@@ -27,17 +27,17 @@ export function Modal({ block, exit, court }: ModalProps) {
           <IoClose size={40} />
         </button>
 
-        <form className="flex justify-between w-full flex-wrap gap-5">
+        <form className="flex justify-between max-w-full flex-wrap md:flex-nowrap gap-5">
           {/* nome, horário e agendar */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             <label
               className="text-base text-white font-medium mb-1"
-              htmlFor="nome "
+              htmlFor="nome"
             >
               Nome
             </label>
             <input
-              className="w-80 h-8 pl-2 bg-white rounded-sm mb-5"
+              className="flex self-center w-full md:max-w-80 h-8 pl-2 bg-white rounded-sm mb-5"
               type="text"
               name="nome"
               placeholder="Digite seu nome.."
@@ -66,13 +66,13 @@ export function Modal({ block, exit, court }: ModalProps) {
             </button>
           </div>
           {/* selecione o profissional e pagamento */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             <div>
               <h2 className="text-base text-white font-medium mb-5">
                 Selecione o profissional para o corte
               </h2>
               {/* profissional */}
-              <div className="flex gap-4 justify-center w-full mb-5">
+              <div className="flex self-center gap-4 justify-center w-full mb-5">
                 <div className="flex flex-col-reverse items-center">
                   <label
                     className="text-base text-white font-medium mt-1"
