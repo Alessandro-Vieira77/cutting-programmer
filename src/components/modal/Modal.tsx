@@ -1,5 +1,9 @@
 import { IoClose } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io5";
+import { BsCopy } from "react-icons/bs";
+
+import { Profissional } from "../profissional/Profissional";
+import { FormEvent, useState } from "react";
 
 interface ModalProps {
   block: string;
@@ -8,6 +12,26 @@ interface ModalProps {
 }
 
 export function Modal({ block, exit, court }: ModalProps) {
+  const [copy, setCopy] = useState("copy");
+  const [payment, setPayment] = useState("");
+
+  console.log(payment);
+
+  // copiar o pix
+  function copyToClipBoard(e: FormEvent) {
+    e.preventDefault();
+    const navi = navigator.clipboard
+      .writeText("(98) 985825422")
+      .then(() => {
+        setCopy("copied");
+        setTimeout(() => setCopy("copy"), 2000);
+      })
+      .catch((err) => {
+        console.error("erro em copiar o texto", err);
+      });
+    return navi;
+  }
+
   return (
     <div
       className={
@@ -27,7 +51,7 @@ export function Modal({ block, exit, court }: ModalProps) {
           <IoClose size={40} />
         </button>
 
-        <form className="flex justify-between max-w-full flex-wrap md:flex-nowrap gap-5">
+        <form className="flex justify-between md:gap-28 max-w-full flex-wrap md:flex-nowrap ">
           {/* nome, horário e agendar */}
           <div className="flex flex-col w-full">
             <label
@@ -68,30 +92,11 @@ export function Modal({ block, exit, court }: ModalProps) {
           {/* selecione o profissional e pagamento */}
           <div className="flex flex-col w-full">
             <div>
-              <h2 className="text-base text-white font-medium mb-5">
-                Selecione o profissional para o corte
+              <h2 className="text-base text-white font-medium mb-5 mt-5 md:mt-0">
+                Selecione o profissional
               </h2>
-              {/* profissional */}
-              <div className="flex self-center gap-4 justify-center w-full mb-5">
-                <div className="flex flex-col-reverse items-center">
-                  <label
-                    className="text-base text-white font-medium mt-1"
-                    htmlFor="profi"
-                  >
-                    Profissional 1
-                  </label>
-                  <input type="radio" name="profi" value={"proficional1"} />
-                </div>
-                <div className="flex flex-col-reverse items-center">
-                  <label
-                    className="text-base text-white font-medium mt-1"
-                    htmlFor="profi"
-                  >
-                    Profissional 2
-                  </label>
-                  <input type="radio" name="profi" value={"profissional2"} />
-                </div>
-              </div>
+              {/*  profissional */}
+              <Profissional />
             </div>
 
             <div className="flex flex-col">
@@ -109,7 +114,13 @@ export function Modal({ block, exit, court }: ModalProps) {
                   >
                     Pix
                   </label>
-                  <input type="radio" name="pagamento" value={"Pix"} />
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    value="pix"
+                    checked={payment === "pix"}
+                    onChange={(e) => setPayment(e.target.value)}
+                  />
                 </div>
                 <div className="flex">
                   <label
@@ -118,10 +129,45 @@ export function Modal({ block, exit, court }: ModalProps) {
                   >
                     Dinheiro
                   </label>
-                  <input type="radio" name="pagamento" value={"dinheiro"} />
+                  <input
+                    type="radio"
+                    name="pagamento"
+                    value="dinheiro"
+                    checked={payment === "dinheiro"}
+                    onChange={(e) => setPayment(e.target.value)}
+                  />
                 </div>
               </div>
+              {/* pix */}
+              <div className={payment === "pix" ? "flex flex-col" : "hidden"}>
+                <div className="flex  w-32  gap-2 items-center justify-center bg-white mt-1.5 rounded-sm">
+                  <p>(98) 985789046</p>
+                </div>
+                <button
+                  className="flex gap-1 items-center w-20 cursor-pointer mt-1.5 font-medium"
+                  style={{
+                    color: copy === "copied" ? "#5bd279" : "#FFF",
+                  }}
+                  onClick={copyToClipBoard}
+                >
+                  <BsCopy />
+                  {copy}
+                </button>
+              </div>
             </div>
+
+            {/* money */}
+            <div className={payment === "dinheiro" ? "mt-1.5" : "hidden"}>
+              <label className="text-white font-medium mr-1.5" htmlFor="troco">
+                troco para?
+              </label>
+              <input
+                className="bg-white w-11 text-center rounded-sm"
+                type="number"
+                name="troco"
+              />
+            </div>
+
             <button
               type="submit"
               className="md:hidden flex mt-5 items-center justify-center gap-1 text-white font-bold w-40 h-9 bg-green-700 rounded-lg cursor-pointer"
