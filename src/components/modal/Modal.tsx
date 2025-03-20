@@ -16,7 +16,7 @@ export function Modal({ block, exit, court }: ModalProps) {
           : "hidden"
       }
     >
-      <div className="w-full max-w-4xl h-96  bg-azul top-96 rounded-2xl border-2 border-white relative p-5 m-4">
+      <div className="bg-azul top-96 rounded-2xl border-2 border-white absolute p-5 m-4">
         <h2 className="text-white font-medium text-2xl w-full text-center mb-5">
           {court}
         </h2>
@@ -54,15 +54,18 @@ export function Modal({ block, exit, court }: ModalProps) {
               name="time"
               placeholder="00:00"
             />
-            <p className="text-base text-white font-medium mb-5">Valor R$15</p>
+            <p className="text-base text-white font-medium md:mb-5">
+              Valor R$15
+            </p>
+            {/* agendar */}
             <button
               type="submit"
-              className="flex items-center justify-center gap-1 text-white font-bold w-40 h-9 bg-green-700 rounded-lg cursor-pointer"
+              className=" hidden md:flex items-center justify-center gap-1 text-white font-bold w-40 h-9 bg-green-700 rounded-lg cursor-pointer"
             >
               Agendar corte <IoLogoWhatsapp size={25} />
             </button>
           </div>
-          {/* selecione e pagamento */}
+          {/* selecione o profissional e pagamento */}
           <div className="flex flex-col">
             <div>
               <h2 className="text-base text-white font-medium mb-5">
@@ -73,20 +76,20 @@ export function Modal({ block, exit, court }: ModalProps) {
                 <div className="flex flex-col-reverse items-center">
                   <label
                     className="text-base text-white font-medium mt-1"
-                    htmlFor="profi1"
+                    htmlFor="profi"
                   >
                     Profissional 1
                   </label>
-                  <input type="checkbox" name="profi1" />
+                  <input type="radio" name="profi" value={"proficional1"} />
                 </div>
                 <div className="flex flex-col-reverse items-center">
                   <label
                     className="text-base text-white font-medium mt-1"
-                    htmlFor="profi2"
+                    htmlFor="profi"
                   >
                     Profissional 2
                   </label>
-                  <input type="checkbox" name="profi2" />
+                  <input type="radio" name="profi" value={"profissional2"} />
                 </div>
               </div>
             </div>
@@ -119,6 +122,12 @@ export function Modal({ block, exit, court }: ModalProps) {
                 </div>
               </div>
             </div>
+            <button
+              type="submit"
+              className="md:hidden flex mt-5 items-center justify-center gap-1 text-white font-bold w-40 h-9 bg-green-700 rounded-lg cursor-pointer"
+            >
+              Agendar corte <IoLogoWhatsapp size={25} />
+            </button>
           </div>
         </form>
       </div>
