@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./profissional.css";
-import { FaCircleUser } from "react-icons/fa6";
+// import { FaCircleUser } from "react-icons/fa6";
 
 import image1 from "/img/alessandro.jpg";
 import image2 from "/img/rony.png";
