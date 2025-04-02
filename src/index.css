@@ -14,3 +14,7 @@
   --spacing-439: 27.25rem;
   --spacing-87.5: 5.24rem;
 }
+
+.scroll::-webkit-scrollbar {
+  display: none; 
+}

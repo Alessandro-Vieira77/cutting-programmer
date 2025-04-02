@@ -24,9 +24,10 @@ export function ButtonService({ court }: PropCourt) {
         <button onClick={handleClick}>
           <IoAdd className="cursor-pointer" size={30} color="#0D2839" />
         </button>
-      </div>
 
-      <Modal block={block} exit={exit} court={court} />
+        <Modal block={block} exit={exit} court={court} />
+      </div>
+      <div />
     </>
   );
 }

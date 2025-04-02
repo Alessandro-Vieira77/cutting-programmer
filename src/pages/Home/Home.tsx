@@ -4,8 +4,12 @@ import { PhotoSlide } from "../../components/photoSlide/PhotoSlide";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutubeSquare } from "react-icons/fa";
+import { useContext } from "react";
+import { TimeContext } from "../../context/timeContext";
 
 export function Home() {
+  const { hm } = useContext(TimeContext);
+
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-F3F3F3 pl-4 pr-4 relative">
       <header className="flex justify-center w-full">
@@ -43,14 +47,17 @@ export function Home() {
                 <p className="text-white text-sm md:text-base mt-4">
                   Selecione abaixo qual serviço deseja realizar o agendamento
                 </p>
-                <div className="flex flex-col gap-2.5 w-full h-80 overflow-y-auto mt-6 text-sm md:text-base">
+                <div className="scroll  flex flex-col gap-1 w-full h-80 overflow-y-auto mt-6 text-sm md:text-base">
                   <ButtonService court="Corte Normal" />
-                  <ButtonService court="Corte + Barba " />
+                  <ButtonService court="Social" />
+                  <ButtonService court="Barba + Cabelo" />
                   <ButtonService court="Luzes" />
                   <ButtonService court="Degrader" />
-                  <ButtonService court="selagem" />
-                  <ButtonService court="Social" />
-                  <ButtonService court="alisamento" />
+                  <ButtonService court="Slow Money" />
+                  <ButtonService court="Moicano" />
+                  <ButtonService court="Americano" />
+                  <ButtonService court="Europeu" />
+                  <ButtonService court="Criança" />
                 </div>
               </div>
               {/* carrosel */}
@@ -96,9 +103,15 @@ export function Home() {
                 <h2 className="text-base md:text-2xl">
                   Horário de funcionamento
                 </h2>
-                <div className="w-20 md:w-24 bg-green-500 rounded-md px-1 py-1 text-center text-sm md:text-base">
-                  Aberto
-                </div>
+                {hm > 18.29 || hm <= 7.59 ? (
+                  <div className="w-20 md:w-24 bg-red-500 rounded-md px-1 py-1 text-center text-sm md:text-base">
+                    fechado
+                  </div>
+                ) : (
+                  <div className="w-20 md:w-24 bg-green-500 rounded-md px-1 py-1 text-center text-sm md:text-base">
+                    aberto
+                  </div>
+                )}
                 <div className="flex w-full justify-between">
                   <div className="flex flex-col gap-3.5 font-medium text-sm md:text-base">
                     <p>segunda-feira</p>
