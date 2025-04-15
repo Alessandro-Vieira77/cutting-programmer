@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# 🛒 Projeto - Agendamento de Corte de Cabelo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto front-end de um site para agendamento de cortes de cabelo, desenvolvido com foco em experiência do usuário e design responsivo. A plataforma oferece uma interface moderna e intuitiva, permitindo que os clientes agendem seus horários com praticidade.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React** – Biblioteca para construção de interfaces
+- 📘 **TypeScript** – Superset do JavaScript para maior segurança e tipagem
+- 💅 **TailwindCSS** – Estilização rápida e responsiva com classes utilitárias
+- 🔄 **React Router DOM** – Navegação entre páginas SPA
+- 📱 **Swiper.js** – Carrossel de imagens e conteúdos
+- 🔥 **Firebase** – Backend como serviço (auth, database, storage)
 
-## Expanding the ESLint configuration
+## 📌 Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📅 Agendamento online de corte de cabelo
+- 🧑‍🎨 Escolha de barbeiro e tipo de serviço
+- 📆 Seleção de data e horário disponíveis
+- 📲 Layout 100% responsivo para mobile e desktop
+- 🖼️ Carrossel interativo com Swiper para exibir serviços e depoimentos
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ▶️ Como Executar o Projeto
+
+### 1️⃣ Clonar o repositório:
+
+```bash
+ git https://github.com/Alessandro-Vieira77/cutting-programmer.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️⃣ Instalar as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+ cd cutting-programmer
+ npm install
 ```
+
+### 4️⃣ Rodar o projeto:
+
+```bash
+ npm run dev
+```
+
+A aplicação estará disponível em [**http://localhost:5173**](http://localhost:5173) (ou outra porta definida pelo Vite).
+
+---
+
+### 4️⃣ projeto online:
+
+- https://cutting-programmer.vercel.app/
+
+### 💡 Contribuição
+
+Fique à vontade para contribuir enviando PRs e sugestões! 😊
